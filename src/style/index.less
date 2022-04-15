@@ -1,0 +1,80 @@
+@bgColor: #b7d4a8;
+// @bgColor: #241, 242, 247;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+#main {
+  width: 360px;
+  height: 420px;
+  background-color: @bgColor;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 40px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  #stage {
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    position: relative;
+    background-color: @bgColor;
+    #snake {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div {
+        width: 10px;
+        height: 10px;
+        background-color: purple;
+        border: 1px solid @bgColor;
+        position: absolute;
+        left: 72px;
+        top: 72px;
+        border-radius: 50%;
+      }
+      div:first-child {
+        width: 12px;
+        height: 12px;
+        background-color: palevioletred;
+        border: 1px solid @bgColor;
+        border-radius: 50%;
+      }
+    }
+
+    #food {
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      left: 36px;
+      top: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between;
+
+      div {
+        width: 5px;
+        height: 5px;
+        background-color: purple;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  #score-panel {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
